@@ -1,3 +1,4 @@
+package com.example.app.ui.car_rental
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.viewModelScope

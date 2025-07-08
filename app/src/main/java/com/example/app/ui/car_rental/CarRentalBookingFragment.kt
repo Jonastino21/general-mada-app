@@ -1,6 +1,6 @@
 package com.example.app.ui.car_rental
 
-import CarRentalViewModel
+
 import android.annotation.SuppressLint
 import android.os.Bundle
 import android.view.View

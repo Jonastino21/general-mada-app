@@ -1,6 +1,5 @@
 package com.example.app.ui.car_rental
 
-import CarRentalViewModel
 import android.os.Bundle
 import android.view.View
 import androidx.appcompat.widget.SearchView

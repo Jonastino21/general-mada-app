@@ -4,6 +4,7 @@
     android:id="@+id/nav_graph"
     app:startDestination="@id/homeFragment">
 
+    <!-- Home -->
     <fragment
         android:id="@+id/homeFragment"
         android:name="com.example.app.ui.home.HomeFragment"
@@ -17,23 +18,31 @@
         <action
             android:id="@+id/action_home_to_carRentalList"
             app:destination="@id/carRentalListFragment" />
-        <action
-            android:id="@+id/action_home_to_createBooking"
-            app:destination="@id/createBookingFragment" />
     </fragment>
 
+    <!-- Taxi Brousse -->
     <fragment
         android:id="@+id/taxiBrousseListFragment"
         android:name="com.example.app.ui.taxi_brousse.TaxiBrousseListFragment"
-        android:label="Taxi Brousse" />
+        android:label="Taxi Brousse">
+        <action
+            android:id="@+id/action_taxiBrousseList_to_booking"
+            app:destination="@id/taxiBrousseBookingFragment" />
+    </fragment>
 
+    <fragment
+        android:id="@+id/taxiBrousseBookingFragment"
+        android:name="com.example.app.ui.taxi_brousse.TaxiBrousseBookingFragment"
+        android:label="Réserver Taxi Brousse" />
+
+    <!-- Maisons -->
     <fragment
         android:id="@+id/houseListFragment"
         android:name="com.example.app.ui.house.HouseListFragment"
-        android:label="Maisons" >
+        android:label="Maisons">
         <action
             android:id="@+id/actionHouseListToDetail"
-            app:destination="@id/houseDetailFragment" >
+            app:destination="@id/houseDetailFragment">
             <argument
                 android:name="houseId"
                 app:argType="integer" />
@@ -52,16 +61,17 @@
     <fragment
         android:id="@+id/houseBookingFragment"
         android:name="com.example.app.ui.house.HouseBookingFragment"
-        android:label="Réserver maison">
+        android:label="Réserver Maison">
         <argument
             android:name="houseId"
             app:argType="integer" />
     </fragment>
 
+    <!-- Voitures -->
     <fragment
         android:id="@+id/carRentalListFragment"
         android:name="com.example.app.ui.car_rental.CarRentalListFragment"
-        android:label="Voitures" >
+        android:label="Voitures">
         <action
             android:id="@+id/action_carRentalList_to_detail"
             app:destination="@id/carRentalDetailFragment">
@@ -74,10 +84,10 @@
     <fragment
         android:id="@+id/carRentalDetailFragment"
         android:name="com.example.app.ui.car_rental.CarRentalDetailFragment"
-        android:label="Détail voiture">
+        android:label="Détail Voiture">
         <action
             android:id="@+id/actionCarRentalDetailToBooking"
-            app:destination="@id/createBookingFragment">
+            app:destination="@id/carRentalBookingFragment">
             <argument
                 android:name="carId"
                 app:argType="integer" />
@@ -85,43 +95,27 @@
     </fragment>
 
     <fragment
-        android:id="@+id/createBookingFragment"
-        android:name="com.example.app.ui.CreateBookingFragment"
-        android:label="Créer une réservation">
+        android:id="@+id/carRentalBookingFragment"
+        android:name="com.example.app.ui.car_rental.CarRentalBookingFragment"
+        android:label="Réserver Voiture">
         <argument
             android:name="carId"
             app:argType="integer" />
     </fragment>
 
-    <!-- ✅ Ajout du ProfileFragment et des actions -->
+    <!-- Profile -->
     <fragment
         android:id="@+id/profileFragment"
         android:name="com.example.app.ui.profile.ProfileFragment"
         android:label="Profil">
         <action
-            android:id="@+id/action_profile_to_editProfile"
-            app:destination="@id/editProfileFragment" />
-        <action
             android:id="@+id/action_profile_to_myBookings"
             app:destination="@id/myBookingsFragment" />
-        <action
-            android:id="@+id/action_profile_to_settings"
-            app:destination="@id/settingsFragment" />
     </fragment>
-
-    <fragment
-        android:id="@+id/editProfileFragment"
-        android:name="com.example.app.ui.profile.EditProfileFragment"
-        android:label="Modifier le profil" />
 
     <fragment
         android:id="@+id/myBookingsFragment"
         android:name="com.example.app.ui.profile.MyBookingsFragment"
-        android:label="Mes réservations" />
-
-    <fragment
-        android:id="@+id/settingsFragment"
-        android:name="com.example.app.ui.profile.SettingsFragment"
-        android:label="Paramètres" />
+        android:label="Mes Réservations" />
 
 </navigation>

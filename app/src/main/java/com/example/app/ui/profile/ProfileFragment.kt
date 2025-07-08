@@ -1,6 +1,5 @@
 package com.example.app.ui.profile
 
-import ProfileViewModel
 import android.os.Bundle
 import android.view.View
 import androidx.fragment.app.Fragment
@@ -12,6 +11,7 @@ import com.example.app.R
 import com.example.app.data.repository.ServiceRepositoryImpl
 import com.example.app.databinding.FragmentProfileBinding
 import com.example.app.ui.common.BaseFragment
+import com.example.app.ui.profiles.ProfileViewModel
 
 class ProfileFragment : BaseFragment() {
 

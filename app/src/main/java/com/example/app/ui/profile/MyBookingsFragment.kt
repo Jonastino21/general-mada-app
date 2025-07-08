@@ -1,6 +1,5 @@
 package com.example.app.ui.profile
 
-import ProfileViewModel
 import android.annotation.SuppressLint
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -19,6 +18,7 @@ import com.example.app.data.model.taxi_brousse.TaxiBrousseBooking
 import com.example.app.data.repository.ServiceRepositoryImpl
 import com.example.app.databinding.FragmentMyBookingsBinding
 import com.example.app.ui.common.BaseFragment
+import com.example.app.ui.profiles.ProfileViewModel
 
 class MyBookingsFragment : BaseFragment() {
 
@@ -80,7 +80,7 @@ class MyBookingsFragment : BaseFragment() {
             adapter.submitList(allBookings.sortedByDescending {
                 when (it) {
                     is TaxiBrousseBooking -> it.bookingDate
-                    is HouseBooking -> it.pickupDate
+                    is HouseBooking -> it.checkInDate
                     is CarRentalBooking -> it.pickupDate
                     else -> ""
                 }

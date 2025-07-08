@@ -1,6 +1,6 @@
 package com.example.app.ui.home
 
-import HomeViewModel
+
 import android.os.Bundle
 import android.view.View
 import androidx.fragment.app.viewModels
@@ -99,7 +99,9 @@ class HomeFragment : BaseFragment() {
         binding.btnCreateBooking.setOnClickListener {
             // Navigation vers création de réservation
             findNavController().navigate(
-                HomeFragmentDirections.actionHomeToCreateBooking()
+                HomeFragmentDirections.actionHomeToCreateBooking(
+                    carId = 1
+                )
             )
         }
 

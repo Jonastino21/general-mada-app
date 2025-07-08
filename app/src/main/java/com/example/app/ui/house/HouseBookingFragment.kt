@@ -1,6 +1,5 @@
 package com.example.app.ui.house
 
-import HouseViewModel
 import android.annotation.SuppressLint
 import android.app.DatePickerDialog
 import android.os.Bundle
@@ -11,6 +10,7 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import com.example.app.R
 import com.example.app.data.model.common.BookingStatus
+import com.example.app.data.model.house.HouseBooking
 import com.example.app.data.repository.ServiceRepositoryImpl
 import com.example.app.databinding.FragmentHouseBookingBinding
 import com.example.app.ui.common.BaseFragment

@@ -9,6 +9,7 @@ import com.example.app.data.model.house.House
 import com.example.app.data.model.car_rental.CarRental
 import com.example.app.data.model.car_rental.CarRentalBooking
 import com.example.app.data.model.common.VehicleType
+import com.example.app.data.model.house.HouseBooking
 
 class ServiceRepositoryImpl : ServiceRepository {
     private val mockDataRepository = MockDataRepository()

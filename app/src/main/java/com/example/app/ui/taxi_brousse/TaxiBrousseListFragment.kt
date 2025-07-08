@@ -1,6 +1,5 @@
 package com.example.app.ui.taxi_brousse
 
-import TaxiBrousseViewModel
 import android.os.Bundle
 import android.view.View
 import androidx.lifecycle.ViewModel
