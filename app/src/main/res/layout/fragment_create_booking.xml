@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+    </data>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="16dp">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal">
+
+            <EditText
+                android:id="@+id/etGuestName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Nom" />
+
+            <EditText
+                android:id="@+id/etGuestPhone"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Téléphone" />
+
+            <EditText
+                android:id="@+id/etPickupDate"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Date de départ" />
+
+            <EditText
+                android:id="@+id/etReturnDate"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Date de retour" />
+
+            <Button
+                android:id="@+id/btnConfirmBooking"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Confirmer la réservation"
+                android:layout_marginTop="16dp" />
+        </LinearLayout>
+    </ScrollView>
+</layout>

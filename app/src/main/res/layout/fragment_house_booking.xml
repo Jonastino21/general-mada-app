@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/scrollView"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/tvHouseTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/titre_de_la_maison"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:paddingBottom="8dp"/>
+
+        <TextView
+            android:id="@+id/tvPrice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/prix_nuit"
+            android:textSize="16sp"
+            android:paddingBottom="16dp"/>
+
+        <EditText
+            android:id="@+id/etCheckIn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/date_d_arriv_e" />
+
+        <EditText
+            android:id="@+id/etCheckOut"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/date_de_d_part"
+            android:layout_marginTop="8dp" />
+
+        <EditText
+            android:id="@+id/etGuests"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/nombre_d_invit_s"
+            android:inputType="number"
+            android:layout_marginTop="8dp" />
+
+        <EditText
+            android:id="@+id/etGuestName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/nom_de_l_invit"
+            android:layout_marginTop="8dp" />
+
+        <EditText
+            android:id="@+id/etGuestPhone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/t_l_phone"
+            android:inputType="phone"
+            android:layout_marginTop="8dp" />
+
+        <EditText
+            android:id="@+id/etSpecialRequests"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/demandes_sp_ciales"
+            android:layout_marginTop="8dp" />
+
+        <Button
+            android:id="@+id/btnConfirmBooking"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/confirmer_reservation"
+            android:layout_marginTop="16dp"/>
+    </LinearLayout>
+</ScrollView>

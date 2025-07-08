@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.viewpager2.widget.ViewPager2
+            android:id="@+id/viewPagerImages"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:layout_marginBottom="8dp"/>
+
+        <me.relex.circleindicator.CircleIndicator3
+            android:id="@+id/indicator"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginBottom="16dp"/>
+
+        <TextView android:id="@+id/tvTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Titre"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <TextView android:id="@+id/tvAddress"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Adresse"
+            android:layout_marginTop="4dp" />
+
+        <TextView android:id="@+id/tvPrice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Prix"
+            android:textSize="16sp"
+            android:textColor="@color/black"
+            android:layout_marginTop="4dp" />
+
+        <TextView android:id="@+id/tvRating"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Note"
+            android:layout_marginTop="4dp" />
+
+        <TextView android:id="@+id/tvBedrooms"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/chambres"
+            android:layout_marginTop="4dp" />
+
+        <TextView android:id="@+id/tvBathrooms"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/salles_de_bain"
+            android:layout_marginTop="4dp" />
+
+        <TextView android:id="@+id/tvGuests"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/invite"
+            android:layout_marginTop="4dp" />
+
+        <TextView android:id="@+id/tvDescription"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/description"
+            android:layout_marginTop="8dp" />
+
+        <TextView android:id="@+id/tvAmenities"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/quipements"
+            android:layout_marginTop="8dp" />
+
+        <TextView android:id="@+id/tvOwner"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/propri_taire"
+            android:layout_marginTop="8dp" />
+
+        <TextView android:id="@+id/tvOwnerPhone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/phone" />
+
+        <Button
+            android:id="@+id/btnBookNow"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/reservation"
+            android:layout_marginTop="16dp"/>
+    </LinearLayout>
+</ScrollView>

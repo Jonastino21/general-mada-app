@@ -1,0 +1,10 @@
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- État actif/sélectionné -->
+    <item android:color="@color/primary" android:state_checked="true"/>
+
+    <!-- État inactif -->
+    <item android:color="@color/secondary_text" android:state_checked="false"/>
+
+    <!-- État par défaut -->
+    <item android:color="@color/secondary_text"/>
+</selector>

@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/homeFragment">
+
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.example.app.ui.home.HomeFragment"
+        android:label="Accueil">
+        <action
+            android:id="@+id/action_home_to_taxiBrousseList"
+            app:destination="@id/taxiBrousseListFragment" />
+        <action
+            android:id="@+id/action_home_to_houseList"
+            app:destination="@id/houseListFragment" />
+        <action
+            android:id="@+id/action_home_to_carRentalList"
+            app:destination="@id/carRentalListFragment" />
+        <action
+            android:id="@+id/action_home_to_createBooking"
+            app:destination="@id/createBookingFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/taxiBrousseListFragment"
+        android:name="com.example.app.ui.taxi_brousse.TaxiBrousseListFragment"
+        android:label="Taxi Brousse" />
+
+    <fragment
+        android:id="@+id/houseListFragment"
+        android:name="com.example.app.ui.house.HouseListFragment"
+        android:label="Maisons" >
+
+        <action
+            android:id="@+id/actionHouseListToDetail"
+            app:destination="@id/houseDetailFragment" >
+            <argument
+                android:name="houseId"
+                app:argType="integer" />
+        </action>
+    </fragment>
+
+    <fragment
+        android:id="@+id/houseDetailFragment"
+        android:name="com.example.app.ui.house.HouseDetailFragment"
+        android:label="Détails Maison">
+        <action
+            android:id="@+id/action_houseDetail_to_booking"
+            app:destination="@id/houseBookingFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/houseBookingFragment"
+        android:name="com.example.app.ui.house.HouseBookingFragment"
+        android:label="Réserver maison">
+        <argument
+            android:name="houseId"
+            app:argType="integer" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/carRentalListFragment"
+        android:name="com.example.app.ui.car_rental.CarRentalListFragment"
+        android:label="Voitures" >
+        <action
+            android:id="@+id/action_carRentalList_to_detail"
+            app:destination="@id/carRentalDetailFragment">
+            <argument
+                android:name="carId"
+                app:argType="integer" />
+        </action>
+    </fragment>
+
+    <fragment
+        android:id="@+id/carRentalDetailFragment"
+        android:name="com.example.app.ui.car_rental.CarRentalDetailFragment"
+        android:label="Détail voiture">
+        <action
+            android:id="@+id/actionCarRentalDetailToBooking"
+            app:destination="@id/createBookingFragment">
+            <argument
+                android:name="carId"
+                app:argType="integer" />
+        </action>
+    </fragment>
+
+    <fragment
+        android:id="@+id/createBookingFragment"
+        android:name="com.example.app.ui.CreateBookingFragment"
+        android:label="Créer une réservation">
+        <argument
+            android:name="carId"
+            app:argType="integer" />
+    </fragment>
+
+</navigation>

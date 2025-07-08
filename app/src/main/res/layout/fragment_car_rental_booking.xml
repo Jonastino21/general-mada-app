@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/scrollView"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center_horizontal">
+
+        <!-- Informations voiture -->
+        <TextView
+            android:id="@+id/tvCarModel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/marque_et_modele"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="8dp" />
+
+        <TextView
+            android:id="@+id/tvDailyPrice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Prix par jour"
+            android:textSize="16sp"
+            android:layout_marginBottom="16dp" />
+
+        <!-- Dates -->
+        <EditText
+            android:id="@+id/etPickupDate"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Date de prise"
+            android:inputType="date"
+            android:layout_marginBottom="8dp" />
+
+        <EditText
+            android:id="@+id/etReturnDate"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Date de retour"
+            android:inputType="date"
+            android:layout_marginBottom="16dp" />
+
+        <!-- Lieux -->
+        <EditText
+            android:id="@+id/etPickupLocation"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Lieu de prise"
+            android:layout_marginBottom="8dp" />
+
+        <EditText
+            android:id="@+id/etReturnLocation"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/lieu_de_retour"
+            android:layout_marginBottom="16dp" />
+
+        <!-- Informations conducteur -->
+        <EditText
+            android:id="@+id/etDriverName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/nom_du_conducteur"
+            android:layout_marginBottom="8dp" />
+
+        <EditText
+            android:id="@+id/etDriverLicense"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/numero_de_permis"
+            android:layout_marginBottom="8dp" />
+
+        <EditText
+            android:id="@+id/etDriverPhone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/telephone_du_conducteur"
+            android:inputType="phone"
+            android:layout_marginBottom="16dp" />
+
+        <!-- Checkbox avec chauffeur -->
+
+        <!-- Bouton de confirmation -->
+        <CheckBox
+            android:id="@+id/cbWithDriver"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:text="@string/avec_chauffeur" />
+
+        <Button
+            android:id="@+id/btnConfirmBooking"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/confirmer_la_reservation" />
+
+    </LinearLayout>
+</ScrollView>

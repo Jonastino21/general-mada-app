@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/scrollView"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center_horizontal">
+
+        <!-- Image de la voiture -->
+        <ImageView
+            android:id="@+id/ivCarImage"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:scaleType="centerCrop"
+            android:layout_marginBottom="16dp"
+            android:contentDescription="@string/marque_et_modele" />
+
+        <!-- Marque et modèle -->
+        <TextView
+            android:id="@+id/tvBrandModel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/marque_et_modele"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="8dp" />
+
+        <!-- Année -->
+        <TextView
+            android:id="@+id/tvYear"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/_2022"
+            android:layout_marginBottom="4dp" />
+
+        <!-- Type -->
+        <TextView
+            android:id="@+id/tvType"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/suv"
+            android:layout_marginBottom="4dp" />
+
+        <!-- Transmission -->
+        <TextView
+            android:id="@+id/tvTransmission"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/automatique"
+            android:layout_marginBottom="4dp" />
+
+        <!-- Nombre de places -->
+        <TextView
+            android:id="@+id/tvSeats"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/_5_places"
+            android:layout_marginBottom="4dp" />
+
+        <!-- Type de carburant -->
+        <TextView
+            android:id="@+id/tvFuelType"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/diesel"
+            android:layout_marginBottom="4dp" />
+
+        <!-- Compagnie de location -->
+        <TextView
+            android:id="@+id/tvCompany"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/locationcompany"
+            android:layout_marginBottom="4dp" />
+
+        <!-- Téléphone de la compagnie -->
+        <TextView
+            android:id="@+id/tvCompanyPhone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Téléphone"
+            android:layout_marginBottom="4dp" />
+
+        <!-- Localisation -->
+        <TextView
+            android:id="@+id/tvLocation"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Localisation"
+            android:layout_marginBottom="8dp" />
+
+        <!-- Note / Évaluation -->
+        <RatingBar
+            android:id="@+id/ratingBar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:numStars="5"
+            android:stepSize="0.5"
+            android:isIndicator="true"
+            android:layout_marginBottom="16dp" />
+
+        <!-- Prix par jour -->
+        <TextView
+            android:id="@+id/tvPrice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/ar_100_000_jour"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="16dp" />
+
+        <!-- Bouton réserver -->
+        <Button
+            android:id="@+id/btnBookNow"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/reserver_maintenant" />
+
+    </LinearLayout>
+</ScrollView>

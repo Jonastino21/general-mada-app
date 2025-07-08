@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/card_taxi_brousse"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="8dp"
+    card_view:cardCornerRadius="8dp"
+    card_view:cardElevation="4dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="12dp">
+
+        <TextView
+            android:id="@+id/tv_departure"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Antananarivo"
+            android:textStyle="bold"
+            android:textSize="16sp"
+            android:textColor="#000000" />
+
+        <TextView
+            android:id="@+id/tv_destination"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Fianarantsoa"
+            android:textStyle="bold"
+            android:textSize="16sp"
+            android:textColor="#000000" />
+
+        <TextView
+            android:id="@+id/tv_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="07:00 - 12:00"
+            android:textSize="14sp"
+            android:textColor="#444444" />
+
+        <TextView
+            android:id="@+id/tv_price"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="25000 Ar"
+            android:textSize="14sp"
+            android:textColor="#444444" />
+
+        <TextView
+            android:id="@+id/tv_company"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Taxi Brousse Company"
+            android:textSize="14sp"
+            android:textColor="#444444" />
+
+        <TextView
+            android:id="@+id/tv_available_seats"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="12 places"
+            android:textSize="14sp"
+            android:textColor="#444444" />
+
+        <TextView
+            android:id="@+id/tv_rating"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="★ 4.5"
+            android:textSize="14sp"
+            android:textColor="#FFA000" />
+    </LinearLayout>
+</androidx.cardview.widget.CardView>
