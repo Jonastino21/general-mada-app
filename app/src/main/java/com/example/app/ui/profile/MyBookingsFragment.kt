@@ -80,7 +80,7 @@ class MyBookingsFragment : BaseFragment() {
             adapter.submitList(allBookings.sortedByDescending {
                 when (it) {
                     is TaxiBrousseBooking -> it.bookingDate
-                    is HouseBooking -> it.checkInDate
+                    is HouseBooking -> it.pickupDate
                     is CarRentalBooking -> it.pickupDate
                     else -> ""
                 }

@@ -6,13 +6,11 @@ import android.app.DatePickerDialog
 import android.os.Bundle
 import android.view.View
 import android.widget.Toast
-import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import com.example.app.R
 import com.example.app.data.model.common.BookingStatus
-import com.example.app.data.model.house.HouseBooking
 import com.example.app.data.repository.ServiceRepositoryImpl
 import com.example.app.databinding.FragmentHouseBookingBinding
 import com.example.app.ui.common.BaseFragment

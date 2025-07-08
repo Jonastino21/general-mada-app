@@ -3,7 +3,6 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.viewModelScope
 import kotlinx.coroutines.launch
 import com.example.app.data.model.house.House
-import com.example.app.data.model.house.HouseBooking
 import com.example.app.data.repository.ServiceRepository
 import com.example.app.ui.common.BaseViewModel
 

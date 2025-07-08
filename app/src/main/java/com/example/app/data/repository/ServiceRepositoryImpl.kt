@@ -6,7 +6,6 @@ import com.example.app.data.model.common.ServiceCard
 import com.example.app.data.model.taxi_brousse.TaxiBrousseRoute
 import com.example.app.data.model.taxi_brousse.TaxiBrousseBooking
 import com.example.app.data.model.house.House
-import com.example.app.data.model.house.HouseBooking
 import com.example.app.data.model.car_rental.CarRental
 import com.example.app.data.model.car_rental.CarRentalBooking
 import com.example.app.data.model.common.VehicleType

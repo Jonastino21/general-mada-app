@@ -31,7 +31,6 @@
         android:id="@+id/houseListFragment"
         android:name="com.example.app.ui.house.HouseListFragment"
         android:label="Maisons" >
-
         <action
             android:id="@+id/actionHouseListToDetail"
             app:destination="@id/houseDetailFragment" >
@@ -93,5 +92,36 @@
             android:name="carId"
             app:argType="integer" />
     </fragment>
+
+    <!-- ✅ Ajout du ProfileFragment et des actions -->
+    <fragment
+        android:id="@+id/profileFragment"
+        android:name="com.example.app.ui.profile.ProfileFragment"
+        android:label="Profil">
+        <action
+            android:id="@+id/action_profile_to_editProfile"
+            app:destination="@id/editProfileFragment" />
+        <action
+            android:id="@+id/action_profile_to_myBookings"
+            app:destination="@id/myBookingsFragment" />
+        <action
+            android:id="@+id/action_profile_to_settings"
+            app:destination="@id/settingsFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/editProfileFragment"
+        android:name="com.example.app.ui.profile.EditProfileFragment"
+        android:label="Modifier le profil" />
+
+    <fragment
+        android:id="@+id/myBookingsFragment"
+        android:name="com.example.app.ui.profile.MyBookingsFragment"
+        android:label="Mes réservations" />
+
+    <fragment
+        android:id="@+id/settingsFragment"
+        android:name="com.example.app.ui.profile.SettingsFragment"
+        android:label="Paramètres" />
 
 </navigation>

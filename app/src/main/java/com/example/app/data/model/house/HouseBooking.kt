@@ -2,7 +2,7 @@ package com.example.app.data.model.house
 
 import com.example.app.data.model.common.BookingStatus
 
-data class CarRentalBooking(
+data class HouseBooking(
     val id: Int,
     val carId: Int,
     val userId: Int,
