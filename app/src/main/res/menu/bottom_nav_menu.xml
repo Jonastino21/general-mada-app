@@ -4,7 +4,7 @@
     tools:ignore="ExtraText">
     <item
         android:id="@+id/homeFragment"
-        android:icon="@drawable/ic_home"
+        android:icon="@drawable/ic_house"
     android:title="Accueil" />
 
     <item

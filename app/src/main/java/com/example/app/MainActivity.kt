@@ -23,13 +23,11 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         setupNavigation()
-        setupToolbar()
         configureStatusBar()
 
-        // ✅ Nouveau : gestion du bouton retour avec OnBackPressedDispatcher
+        // ✅ Gestion du bouton retour
         onBackPressedDispatcher.addCallback(this) {
             if (!navController.popBackStack()) {
-                // Si aucune destination précédente, on ferme l'activité
                 finish()
             }
         }
@@ -40,7 +38,7 @@ class MainActivity : AppCompatActivity() {
             .findFragmentById(R.id.nav_host_fragment) as NavHostFragment
         navController = navHostFragment.navController
 
-        // Définir les destinations principales (pas de flèche retour sur ces écrans)
+        // Définir les destinations principales (pas de flèche retour)
         appBarConfiguration = AppBarConfiguration(
             setOf(
                 R.id.homeFragment,
@@ -50,28 +48,15 @@ class MainActivity : AppCompatActivity() {
             )
         )
 
-        findViewById<BottomNavigationView>(R.id.bottom_navigation).apply {
+        val bottomNavigationView = findViewById<BottomNavigationView>(R.id.bottom_navigation)
+        bottomNavigationView.apply {
             setupWithNavController(navController)
 
             // Utiliser les icônes déjà colorées
             itemIconTintList = null
-
-            setOnItemSelectedListener { item ->
-                when (item.itemId) {
-                    R.id.homeFragment -> navController.navigate(R.id.homeFragment)
-                    R.id.bookingsFragment -> navController.navigate(R.id.bookingsFragment)
-                    R.id.favoritesFragment -> navController.navigate(R.id.favoritesFragment)
-                    R.id.profileFragment -> navController.navigate(R.id.profileFragment)
-                }
-                true
-            }
         }
     }
 
-    private fun setupToolbar() {
-        setSupportActionBar(findViewById(R.id.toolbar))
-        setupActionBarWithNavController(navController, appBarConfiguration)
-    }
 
     private fun configureStatusBar() {
         window.apply {
@@ -87,10 +72,11 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun showNotificationBadge(count: Int) {
-        findViewById<BottomNavigationView>(R.id.bottom_navigation).getOrCreateBadge(R.id.bookingsFragment).apply {
-            backgroundColor = ContextCompat.getColor(this@MainActivity, R.color.notification_red)
-            number = count
-            isVisible = count > 0
-        }
+        findViewById<BottomNavigationView>(R.id.bottom_navigation)
+            .getOrCreateBadge(R.id.bookingsFragment).apply {
+                backgroundColor = ContextCompat.getColor(this@MainActivity, R.color.notification_red)
+                number = count
+                isVisible = count > 0
+            }
     }
 }

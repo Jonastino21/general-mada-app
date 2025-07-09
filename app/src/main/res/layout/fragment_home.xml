@@ -2,77 +2,206 @@
 <androidx.constraintlayout.widget.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/home_fragment_root"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="16dp">
+    android:background="@color/white">
 
-    <!-- Image profil utilisateur -->
-    <ImageView
-        android:id="@+id/ivUserProfile"
-        android:layout_width="64dp"
-        android:layout_height="64dp"
-        android:contentDescription="@string/user_profile_picture"
+    <!-- Header : carrousel (ViewPager2) -->
+    <RelativeLayout
+        android:id="@+id/headerLayout"
+        android:layout_width="0dp"
+        android:layout_height="266dp"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        android:scaleType="centerCrop"
-        android:src="@drawable/ic_user_placeholder" />
+        app:layout_constraintEnd_toEndOf="parent">
 
-    <!-- Nom utilisateur -->
-    <TextView
-        android:id="@+id/tvUserName"
+        <!-- ViewPager2 pour le carrousel -->
+        <androidx.viewpager2.widget.ViewPager2
+            android:id="@+id/viewPagerCarousel"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:clipToPadding="false" />
+
+        <!-- Overlay sombre semi-transparent -->
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#80000000" /> <!-- noir 50% opacity -->
+
+        <!-- Overlay : Search bar -->
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_margin="16dp"
+            android:layout_alignParentTop="true"
+            app:cardCornerRadius="24dp"
+            app:cardElevation="4dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:paddingHorizontal="16dp">
+
+                <ImageView
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:src="@drawable/ic_search"
+                    android:contentDescription="Search"/>
+
+                <EditText
+                    android:id="@+id/etSearch"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@android:color/transparent"
+                    android:hint="Rechercher un service"
+                    android:paddingStart="8dp"
+                    android:textColor="@android:color/black"
+                    android:textSize="14sp"/>
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <!-- Petit résumé sous la search bar -->
+        <TextView
+            android:id="@+id/tvHeaderText"
+            android:layout_width="381dp"
+            android:layout_height="104dp"
+            android:layout_below="@id/etSearch"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="72dp"
+            android:gravity="center"
+            android:shadowColor="@android:color/black"
+            android:shadowDx="0"
+            android:shadowDy="0"
+            android:shadowRadius="2"
+            android:text="Réservez, Louez, Voyagez. Simple et rapide !"
+            android:textColor="@android:color/white"
+            android:textSize="30sp"
+            tools:ignore="NotSibling" />
+    </RelativeLayout>
+
+    <!-- CardView blanche pour les 3 services -->
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardServices"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="@string/nom_utilisateur"
-        android:textAppearance="@style/TextAppearance.AppCompat.Large"
-        android:textStyle="bold"
-        app:layout_constraintStart_toEndOf="@id/ivUserProfile"
-        app:layout_constraintTop_toTopOf="@id/ivUserProfile"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginStart="12dp"/>
-
-    <!-- Localisation utilisateur -->
-    <TextView
-        android:id="@+id/tvUserLocation"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:text="@string/localisation"
-        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-        app:layout_constraintStart_toStartOf="@id/tvUserName"
-        app:layout_constraintTop_toBottomOf="@id/tvUserName"
-        app:layout_constraintEnd_toEndOf="parent" />
-
-    <!-- Bouton création réservation -->
-    <Button
-        android:id="@+id/btnCreateBooking"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:text="@string/creer_une_reservation"
-        app:layout_constraintTop_toBottomOf="@id/tvUserLocation"
+        android:layout_marginHorizontal="16dp"
+        android:translationY="-40dp"
+        app:cardCornerRadius="16dp"
+        app:cardElevation="8dp"
+        app:layout_constraintTop_toBottomOf="@id/headerLayout"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="16dp" />
+        app:layout_constraintEnd_toEndOf="parent">
 
-    <!-- Notifications (icone) -->
-    <ImageView
-        android:id="@+id/ivNotifications"
-        android:layout_width="32dp"
-        android:layout_height="32dp"
-        android:contentDescription="@string/notifications"
-        android:src="@drawable/ic_notifications"
-        app:layout_constraintTop_toTopOf="@id/btnCreateBooking"
-        app:layout_constraintEnd_toEndOf="parent" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:padding="16dp">
 
-    <!-- RecyclerView des services -->
+            <!-- Service Taxi Brousse -->
+            <LinearLayout
+                android:id="@+id/layoutTaxiBrousse"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:gravity="center"
+                android:clickable="true"
+                android:focusable="true"
+                android:background="?android:attr/selectableItemBackground">
+
+                <ImageView
+                    android:layout_width="32dp"
+                    android:layout_height="32dp"
+                    android:src="@drawable/ic_taxi_brousse"
+                    android:contentDescription="Taxi Brousse"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Passenger"
+                    android:textSize="12sp"
+                    android:textColor="@color/primary_dark"/>
+            </LinearLayout>
+
+            <!-- Service Maison -->
+            <LinearLayout
+                android:id="@+id/layoutHouse"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:gravity="center"
+                android:clickable="true"
+                android:focusable="true"
+                android:background="?android:attr/selectableItemBackground">
+
+                <ImageView
+                    android:layout_width="32dp"
+                    android:layout_height="32dp"
+                    android:src="@drawable/ic_house"
+                    android:contentDescription="Maison"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Trano vacance"
+                    android:textSize="12sp"
+                    android:textColor="@color/primary_dark"/>
+            </LinearLayout>
+
+            <!-- Service Voiture -->
+            <LinearLayout
+                android:id="@+id/layoutCarRental"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:gravity="center"
+                android:clickable="true"
+                android:focusable="true"
+                android:background="?android:attr/selectableItemBackground">
+
+                <ImageView
+                    android:layout_width="32dp"
+                    android:layout_height="32dp"
+                    android:src="@drawable/ic_car_rental"
+                    android:contentDescription="Voiture"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Location"
+                    android:textSize="12sp"
+                    android:textColor="@color/primary_dark"/>
+            </LinearLayout>
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+    <!-- Titre Transactions -->
+    <TextView
+        android:id="@+id/tvTransactionsTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Transactions récentes"
+        android:textStyle="bold"
+        android:textSize="16sp"
+        android:layout_marginTop="16dp"
+        android:layout_marginStart="16dp"
+        app:layout_constraintTop_toBottomOf="@id/cardServices"
+        app:layout_constraintStart_toStartOf="parent"/>
+
+    <!-- RecyclerView -->
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerViewServices"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:clipToPadding="false"
-        android:paddingTop="16dp"
-        app:layout_constraintTop_toBottomOf="@id/btnCreateBooking"
+        android:paddingTop="8dp"
+        app:layout_constraintTop_toBottomOf="@id/tvTransactionsTitle"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent" />
-
+        app:layout_constraintEnd_toEndOf="parent"/>
 </androidx.constraintlayout.widget.ConstraintLayout>
